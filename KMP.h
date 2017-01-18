@@ -1,4 +1,4 @@
-// Çó×Ö·û´®³¤¶È 
+// æ±‚å­—ç¬¦ä¸²é•¿åº¦ 
 int GetLength(char *str)
 {
 	for (char *p = str;; p++)
@@ -6,7 +6,7 @@ int GetLength(char *str)
 			return p - str;
 }
 
-// Éú³ÉnextÊı×é 
+// ç”Ÿæˆnextæ•°ç»„ 
 void GenerateNextArray(char *str, int length, int* next)
 {
 	next[0] = -1;
@@ -24,19 +24,19 @@ void GenerateNextArray(char *str, int length, int* next)
 	}
 }
 
-// ·µ»ØpatternÔÚtargetÖĞµÄÎ»ÖÃ£¬²»Æ¥ÅäÔò·µ»Ø-1 
+// è¿”å›patternåœ¨targetä¸­çš„ä½ç½®ï¼Œä¸åŒ¹é…åˆ™è¿”å›-1 
 int StringMatch(char *target, char *pattern)
 {
-	int i = 0, j = 0;
-	int targetLen = GetLength(target);
+	int j = 0;
 	int patternLen = GetLength(pattern);
 	int *next = new int[patternLen];
+	char *p = target;
 	GenerateNextArray(pattern, patternLen, next);
-	while (i < targetLen && j < patternLen)
+	while (*p != '\0' && j < patternLen)
 	{
-		if (j == -1 || target[i] == pattern[j])
+		if (j == -1 || *p == pattern[j])
 		{
-			i++;
+			p++;
 			j++;
 		}
 		else
@@ -44,7 +44,7 @@ int StringMatch(char *target, char *pattern)
 	}
 	delete[] next;
 	if (j >= patternLen)
-		return i - patternLen;
+		return p - target - patternLen;
 	else
 		return -1;
 }
