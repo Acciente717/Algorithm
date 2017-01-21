@@ -44,7 +44,7 @@ int strstr_KMP(char *target, char *pattern)
 	}
 	delete[] next;
 	if (j >= patternLen)
-		return p - target - patternLen;
+		return target + (p - target - patternLen);
 	else
-		return -1;
+		return 0;
 }
