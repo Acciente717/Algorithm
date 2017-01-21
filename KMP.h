@@ -25,7 +25,7 @@ void GenerateNextArray(char *str, int length, int* next)
 }
 
 // 返回pattern在target中的位置，不匹配则返回-1 
-int StringMatch(char *target, char *pattern)
+int strstr_KMP(char *target, char *pattern)
 {
 	int j = 0;
 	int patternLen = GetLength(pattern);
