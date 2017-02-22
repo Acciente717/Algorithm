@@ -1,4 +1,16 @@
-// 求字符串长度 
+/*
+#########################
+###       KMP.h       ###
+###      By Acc.      ###
+###      Ver 1.1      ###
+###    2017-01-27     ###
+#########################
+
+It works just like the "strstr" function in <cstring>.
+
+*/
+
+// Get the length of the string.
 int GetLength(char *str)
 {
 	for (char *p = str;; p++)
@@ -6,7 +18,7 @@ int GetLength(char *str)
 			return p - str;
 }
 
-// 生成next数组 
+// Generate the "next" array to speed up the matching process.
 void GenerateNextArray(char *str, int length, int* next)
 {
 	next[0] = -1;
@@ -24,7 +36,7 @@ void GenerateNextArray(char *str, int length, int* next)
 	}
 }
 
-// 返回pattern在target中的位置，不匹配则返回-1 
+// Return the pointer pointing to the matched piece, otherwise return 0 (NULL).
 char *strstr_KMP(char *target, char *pattern)
 {
 	int j = 0;
