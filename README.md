@@ -2,7 +2,7 @@
 
 ###This is a depository used to store the self-written functions.<br><br>
 ###KMP.h<br>
-Works like "strstr" in <cstring> but using KMP algorithm.<br>
+Works like "strstr" in \<cstring> but using KMP algorithm.<br>
 ```c++
 char *strstr_KMP(char *target, char *pattern);
 ```
