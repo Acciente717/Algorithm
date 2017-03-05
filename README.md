@@ -18,7 +18,7 @@ void *DichotomyLocate(void *base, int num, int size, \
 ```
 <br>
 ###sort_mt.h<br>
-This function works like "sort" in <algorithm>.<br>
+This function works like "sort" in \<algorithm>.<br>
 It creates multiple threads when running.
 ```c++
 void sort_mt(RanIt begin_, RanIt end_, Pred cmp, int thread_power)；
