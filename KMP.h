@@ -2,8 +2,8 @@
 #########################
 ###       KMP.h       ###
 ###      By Acc.      ###
-###      Ver 1.1      ###
-###    2017-01-27     ###
+###      Ver 1.2      ###
+###    2017-07-04     ###
 #########################
 
 It works just like the "strstr" function in <cstring>.
@@ -11,7 +11,7 @@ It works just like the "strstr" function in <cstring>.
 */
 
 // Get the length of the string.
-int GetLength(char *str)
+static int GetLength(char *str)
 {
 	for (char *p = str;; p++)
 		if (*p == '\0')
@@ -19,7 +19,7 @@ int GetLength(char *str)
 }
 
 // Generate the "next" array to speed up the matching process.
-void GenerateNextArray(char *str, int length, int* next)
+static void GenerateNextArray(char *str, int length, int* next)
 {
 	next[0] = -1;
 	int i = 0, k = -1;
